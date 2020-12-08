@@ -8,6 +8,7 @@
         <a href="inserir.php">Cadastrar</a></br></br>
         <table border="1" width="100%">
         	<tr>
+                <th>ID</th>
 	        	<th>Email</th>
 	        	<th>Senha</th>
 	        	<th>Acão</th>
@@ -21,9 +22,10 @@
         	foreach ($sql->fetchAll() as $usuario) {
         	?>
         	<tr>
+                <td><?php echo $usuario['id'];?></td>
 	        	<td><?php echo $usuario['email'];?></td>
 	        	<td><?php echo $usuario['senha'];?></td>
-	        	<td><a href="editar.php?id=<? echo $usuario['id']; ?>">Editar</a> - <a href="excluir.php?id=<? echo $usuario['id']; ?>">Excluir</a></td>
+	        	<td><a href="editar.php?id=<?php echo $usuario['id'];?>">Editar</a> - <a href="excluir.php?id=<?php echo $usuario['id'];?>">Excluir</a></td>
         	</tr>
         <?php }?>
         </table>
