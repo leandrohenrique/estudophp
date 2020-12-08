@@ -15,15 +15,15 @@
         <?php 
             require "config.php";
 
-        	$sql = "SELECT * FROM pessoa";
+        	$sql = "SELECT * FROM usuario";
         	$sql = $con->query($sql);
 
-        	foreach ($sql->fetchAll() as $pessoa) {
+        	foreach ($sql->fetchAll() as $usuario) {
         	?>
         	<tr>
-	        	<td><?php echo $pessoa['email'];?></td>
-	        	<td><?php echo $pessoa['senha'];?></td>
-	        	<td><a href="editar.php?id=<? echo $pessoa['idpessoa']; ?>">Editar</a> - <a href="excluir.php?id=<? echo $pessoa['idpessoa']; ?>">Excluir</a></td>
+	        	<td><?php echo $usuario['email'];?></td>
+	        	<td><?php echo $usuario['senha'];?></td>
+	        	<td><a href="editar.php?id=<? echo $usuario['id']; ?>">Editar</a> - <a href="excluir.php?id=<? echo $usuario['id']; ?>">Excluir</a></td>
         	</tr>
         <?php }?>
         </table>
