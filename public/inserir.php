@@ -1,23 +1,22 @@
+<?php
+	require 'config.php';
 
+	if (isset($_POST['email']) && !empty($_POST['email'])){
+		
+		$email = addslashes($_POST['email']);
+		$senha = md5(addslashes($_POST['senha']));
+
+		$sql = "INSERT INTO usuario (email, senha) values ('$email','$senha')";
+		$con->query($sql);
+
+		header('Location: index.php');
+    }
+?>
 <html>
 <head>
 	<title>Inserir</title>
 </head>
 <body>
-	<?php
-		require 'config.php';
-
-		if (isset($_POST['email']) && !empty($_POST['email'])){
-			
-			$email = addslashes($_POST['email']);
-			$senha = md5(addslashes($_POST['senha']));
-
-			$sql = "INSERT INTO usuario (email, senha) values ('$email','$senha')";
-			$con->query($sql);
-
-			header("Location: index.php");
-	    }
-	?>
 	<form method="POST">
 		<label>Email: </label>
 		<input type="text" name="email"></br></br>

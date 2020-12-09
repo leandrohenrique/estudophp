@@ -22,10 +22,10 @@
         	foreach ($sql->fetchAll() as $usuario) {
         	?>
         	<tr>
-                <td><?php echo $usuario['id'];?></td>
+                <td><?php echo $usuario['idusuario'];?></td>
 	        	<td><?php echo $usuario['email'];?></td>
 	        	<td><?php echo $usuario['senha'];?></td>
-	        	<td><a href="editar.php?id=<?php echo $usuario['id'];?>">Editar</a> - <a href="excluir.php?id=<?php echo $usuario['id'];?>">Excluir</a></td>
+	        	<td><a href="editar.php?id=<?php echo $usuario['idusuario'];?>">Editar</a> - <a href="excluir.php?id=<?php echo $usuario['idusuario'];?>">Excluir</a></td>
         	</tr>
         <?php }?>
         </table>
